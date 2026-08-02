@@ -1,5 +1,5 @@
 package programmingtwo;
-// GIT CONNECTION TEST
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;

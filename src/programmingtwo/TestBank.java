@@ -1,5 +1,5 @@
 package programmingtwo;
-// TEST COMMENT FOR VERSION CONTROL TEST!!
+
 public class TestBank {
 
     public static void main(String[] args) {

@@ -13,8 +13,11 @@ public class ShapeArray {
         Shape[] shapeArray = { sphere, cylinder, cone };
 
         // Loop through the array and print shape's data
+        // Adds separator bar after printing result
         for (Shape shape : shapeArray) {
             System.out.println(shape.toString());
+            System.out.println("-------------------------");
+
         }
     }
 }

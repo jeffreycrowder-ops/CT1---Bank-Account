@@ -12,16 +12,16 @@ public class TestBank {
         myAccount.setAccountID(53332);
 
         // Deposit money
-        myAccount.deposit(1300);
+        myAccount.deposit(-50);
         myAccount.displayAccount();
 
         // Normal withdrawal
         System.out.println("\nProcessing Request - Withdrawl of $500");
-        myAccount.processWithdrawal(500);
+        myAccount.processWithdrawal(0);
 
         // Overdraft withdrawal
         System.out.println("\nWithdrawing $1500 (overdraft catch test)...");
-        myAccount.processWithdrawal(1500);
+        myAccount.processWithdrawal(-100);
 
         // Final account display
         System.out.println("\nFinal Account Status:");

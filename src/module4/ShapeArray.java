@@ -5,9 +5,9 @@ public class ShapeArray {
     public static void main(String[] args) {
 
         // Instantiate one of each shape
-        Shape sphere = new Sphere(3.0);
-        Shape cylinder = new Cylinder(2.0, 5.0);
-        Shape cone = new Cone(2.5, 4.0);
+        Shape sphere = new Sphere(1.5);
+        Shape cylinder = new Cylinder(1.0, 2.5);
+        Shape cone = new Cone(1.25, 2.0);
 
         // Store them in an array
         Shape[] shapeArray = { sphere, cylinder, cone };

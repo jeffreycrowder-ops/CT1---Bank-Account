@@ -12,13 +12,21 @@ public class BankAccount {
         this.balance = 0.0;
     }
 
-    // Deposit method
+    // UPDATE: Added validation to prevent negative deposits
     public void deposit(double amount) {
+        if (amount <= 0) {
+            System.out.println("Deposit amount must be positive.");
+            return;
+        }
         balance += amount;
     }
 
-    // Withdrawal method
+    // UPDATE: Added validation to prevent negative withdrawals
     public void withdrawal(double amount) {
+        if (amount <= 0) {
+            System.out.println("Withdrawal amount must be positive.");
+            return;
+        }
         balance -= amount;
     }
 
@@ -52,11 +60,12 @@ public class BankAccount {
         return balance;
     }
 
-    // Account summary
-    public void accountSummary() {
-        System.out.println("Account Summary:");
-        System.out.println("Name: " + firstName + " " + lastName);
-        System.out.println("Account ID: " + accountID);
-        System.out.println("Balance: $" + balance);
+    // UPDATE: Replaced accountSummary() printing with a toString() method
+    @Override
+    public String toString() {
+        return "Account Summary:\n" +
+               "Name: " + firstName + " " + lastName + "\n" +
+               "Account ID: " + accountID + "\n" +
+               "Balance: $" + balance;
     }
 }

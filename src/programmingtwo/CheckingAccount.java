@@ -3,6 +3,7 @@ package programmingtwo;
 public class CheckingAccount extends BankAccount {
 
     private double interestRate;
+    private static final double OVERDRAFT_FEE = 30.0; // UPDATE: Added constant
 
     public CheckingAccount(double interestRate) {
         super();
@@ -14,27 +15,22 @@ public class CheckingAccount extends BankAccount {
 
         double currentBalance = getBalance();
 
-        // Check for overdraft
         if (currentBalance - amount < 0) {
             System.out.println("Insufficient Funds - A $30 fee has been deducted.");
 
-            // Subtract the amount + fee at the same time
-            double totalWithdrawal = amount + 30;
-
-            // Apply the combined withdrawal
+            double totalWithdrawal = amount + OVERDRAFT_FEE;
             withdrawal(totalWithdrawal);
 
         } else {
-            // Normal withdrawal
             withdrawal(amount);
         }
 
         System.out.println("New Balance: $" + getBalance());
     }
 
-    // Displays account info + interest rate
+    // UPDATE: Cleaned up display by using toString()
     public void displayAccount() {
-        accountSummary();
+        System.out.println(toString());
         System.out.println("Interest Rate: " + interestRate + "%");
     }
 }

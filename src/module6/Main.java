@@ -20,6 +20,18 @@ public class Main {
         students.add(new Student(6, "Omar", "14 Meadowstone Circle"));
         students.add(new Student(8, "Liam", "93 Autumn Gate Road"));
 
+        // checks for duplicate roll numbers in the list
+        for (int i = 0; i < students.size(); i++) {
+            for (int j = i + 1; j < students.size(); j++) {
+                if (students.get(i).getRollno() == students.get(j).getRollno()) {
+                    System.out.println("\nWARNING: Duplicate roll number detected in the following entries:");
+                    System.out.println(students.get(i));
+                    System.out.println(students.get(j));
+                }
+            }
+        }
+
+        
         // prints the original unsorted list.
         System.out.println("Original List:");
         students.forEach(System.out::println);

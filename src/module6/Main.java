@@ -65,7 +65,7 @@ public class Main {
         }
     }
 
-    // Added Improvement: Sorting logic moved into separate methods for easier reading
+    // Added Improvement: Sorting logic moved to a separate methods for easier reading
     private static void sortByName(ArrayList<Student> students) {
         SelectionSort.sort(students, new NameComparator());
     }

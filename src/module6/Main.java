@@ -5,7 +5,34 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
+        // Added Improvement: Student loading moved into a separate method for cleaner structure.
         // creates ArrayList to store 10 Student objects
+        ArrayList<Student> students = loadStudents();
+
+        // Added Improvement: Duplicate checking moved into its own method for cleaner structure.
+        // checks for duplicate roll numbers in the list
+        checkDuplicates(students);
+
+        // prints the original unsorted list.
+        System.out.println("Original List:");
+        students.forEach(System.out::println);
+
+        // Added Improvement: Sorting by name moved into a helper method.
+        // sorts by name using NameComparator and print results.
+        System.out.println("\nSorted by Name:");
+        sortByName(students);
+        students.forEach(System.out::println);
+
+        // Added Improvement: Sorting by roll number moved into a helper method.
+        // sorts by roll number using RollComparator and print results.
+        System.out.println("\nSorted by Roll Number:");
+        sortByRoll(students);
+        students.forEach(System.out::println);
+    }
+
+    // Added Improvement: Extracted student creation into its own method for cleaner structure in main().
+    private static ArrayList<Student> loadStudents() {
+
         ArrayList<Student> students = new ArrayList<>();
 
         // adds sample student data with random addresses.
@@ -20,6 +47,12 @@ public class Main {
         students.add(new Student(6, "Omar", "14 Meadowstone Circle"));
         students.add(new Student(8, "Liam", "93 Autumn Gate Road"));
 
+        return students;
+    }
+
+    // Added Improvement: Duplicate checking extracted into a reusable method.
+    private static void checkDuplicates(ArrayList<Student> students) {
+
         // checks for duplicate roll numbers in the list
         for (int i = 0; i < students.size(); i++) {
             for (int j = i + 1; j < students.size(); j++) {
@@ -30,20 +63,14 @@ public class Main {
                 }
             }
         }
+    }
 
-        
-        // prints the original unsorted list.
-        System.out.println("Original List:");
-        students.forEach(System.out::println);
-
-        // sorts by name using NameComparator and print results.
-        System.out.println("\nSorted by Name:");
+    // Added Improvement: Sorting logic moved into separate methods for easier reading
+    private static void sortByName(ArrayList<Student> students) {
         SelectionSort.sort(students, new NameComparator());
-        students.forEach(System.out::println);
+    }
 
-        // sorts by roll number using RollComparator and print results.
-        System.out.println("\nSorted by Roll Number:");
+    private static void sortByRoll(ArrayList<Student> students) {
         SelectionSort.sort(students, new RollComparator());
-        students.forEach(System.out::println);
     }
 }

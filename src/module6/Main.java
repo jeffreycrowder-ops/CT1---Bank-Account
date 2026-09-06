@@ -37,7 +37,7 @@ public class Main {
 
         // adds sample student data with random addresses.
         students.add(new Student(5, "Jeff", "42 Maple Ridge Lane"));
-        students.add(new Student(2, "Anna", "19 Crescent Hollow"));
+        students.add(new Student(5, "Anna", "19 Crescent Hollow"));
         students.add(new Student(9, "Mike", "301 Riverbend Court"));
         students.add(new Student(1, "Zara", "88 Pine Orchard Way"));
         students.add(new Student(7, "Chris", "12 Willow Crest Drive"));
